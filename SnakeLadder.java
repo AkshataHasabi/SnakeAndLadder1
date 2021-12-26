@@ -13,18 +13,20 @@ public class SnakeLadder {
     			System.out.println("Dice rolled value: " + diceRoll);
     			int option = (int) Math.floor(Math.random() * 10) % 3;
     			switch (option) {
-            		case NoPlayOption:
-            				position = position + 0;
-            				break;
-            		case ladderOption:
-            				position = position + diceRoll;
-            				break;
-            		case SnakeOption:
-                    		position = position - diceRoll;
-                    		if(position < 0){
-                            		position = 0;
-                    		}
-                    		break;
+                  			case NoPlayOption:
+                  				break;
+                  			case ladderOption:
+                  				if(position + diceRoll <= 100){
+                  					position = position + diceRoll;
+                  				}
+                  				break;
+                  			case SnakeOption:
+                  				position = position - diceRoll;
+                  				if (position < 0)
+                  				{
+                  					position = 0;
+                  				}
+                  				break;
     			}
     		}
     		System.out.println("Player Wins with Position :" + position);
